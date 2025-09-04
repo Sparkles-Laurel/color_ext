@@ -9,16 +9,16 @@ typedef Colour = Color;
 extension ColourExt on Colour {
   /// Constructs a CMYK color
   static Colour fromCMYK(double c, double m, double y, double k) {
-    final _c = clampDouble(c, 0.0, 1.0);
-    final _m = clampDouble(m, 0.0, 1.0);
-    final _y = clampDouble(y, 0.0, 1.0);
-    final _k = clampDouble(k, 0.0, 1.0);
+    final c0 = clampDouble(c, 0.0, 1.0);
+    final m0 = clampDouble(m, 0.0, 1.0);
+    final y0 = clampDouble(y, 0.0, 1.0);
+    final k0 = clampDouble(k, 0.0, 1.0);
 
-    final _r = (1 - _c) * (1 - _k);
-    final _g = (1 - _m) * (1 - _k);
-    final _b = (1 - _y) * (1 - _k);
+    final r0 = (1 - c0) * (1 - k0);
+    final g0 = (1 - m0) * (1 - k0);
+    final b0 = (1 - y0) * (1 - k0);
 
-    return Colour.fromRGBO(_r.round(), _g.round(), _b.round(), 1);
+    return Colour.fromRGBO(r0.round(), g0.round(), b0.round(), 1);
   }
 
   /// Converts a [double] in [0.0, 1.0] to an int channel in [0, 255].
