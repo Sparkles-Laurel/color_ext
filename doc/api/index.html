@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="color_ext API docs, for the Dart programming language.">
+  <title>color_ext - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">color_ext package</li>
+  </ol>
+  <div class="self-name">color_ext</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <!-- 
+This README describes the package. If you publish this package to pub.dev,
+this README's contents appear on the landing page for your package.
+
+For information about how to write a good package README, see the guide for
+[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+
+For general information about developing packages, see the Dart guide for
+[creating packages](https://dart.dev/guides/libraries/create-packages)
+and the Flutter guide for
+[developing packages and plugins](https://flutter.dev/to/develop-packages). 
+-->
+<h1 id="color_ext">color_ext</h1>
+<p>A small but powerful Dart/Flutter package providing extensions and utilities for working with colors. Includes convenient RGBA/CMYK conversion, color inversion, luminance scaling, and easy access to individual channels. Perfect for designers, Flutter developers, or anyone who wants more control over colors programmatically.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Create colors from <strong>CMYK</strong> values.</li>
+<li>Invert colors easily using <code>.inverted</code>.</li>
+<li>Scale colors by luminance using <code>.withLuminance(double)</code>.</li>
+<li>Access RGBA channels as integers (<code>0-255</code>).</li>
+<li>Access CMYK channels as doubles (<code>0.0-1.0</code>).</li>
+<li>Fully Dart-native, works in both Flutter and server-side Dart.</li>
+</ul>
+<h2 id="getting-started">Getting started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Dart SDK &gt;= 2.18</li>
+<li>Flutter &gt;= 3.0 (optional, if using in Flutter apps)</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p>Add the dependency to your <code>pubspec.yaml</code>:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  color_ext: ^0.1.0
+</code></pre>
+<p>Then run:</p>
+<pre class="language-bash"><code class="language-bash">dart pub get
+</code></pre>
+<p>or for Flutter projects</p>
+<pre class="language-bash"><code class="language-bash">flutter pub get
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="basic-example">Basic example</h3>
+<pre class="language-dart"><code class="language-dart">import 'package:color_ext/color_ext.dart';
+
+void main() {
+  // Create a color from ARGB
+  final colour = Colour.fromARGB(0xFF, 0xCC, 0xFF, 0xCC);
+
+  // Invert the color
+  final inverted = colour.inverted;
+  print("Inverted color: R:${inverted.red}, G:${inverted.green}, B:${inverted.blue}");
+
+  // Scale luminance
+  final halfShade = colour.withLuminance(0.5);
+  print("Half-luminance color: R:${halfShade.red}, G:${halfShade.green}, B:${halfShade.blue}");
+
+  // Create from CMYK
+  final cyan = ColourExt.fromCMYK(1.0, 0.0, 0.0, 0.0);
+  print("Cyan RGB: ${cyan.red}, ${cyan.green}, ${cyan.blue}");
+
+  // Access CMYK channels
+  print("CMYK of #CCFFCC: "
+      "C: ${colour.c.toStringAsFixed(2)}, "
+      "M: ${colour.m.toStringAsFixed(2)}, "
+      "Y: ${colour.y.toStringAsFixed(2)}, "
+      "K: ${colour.k.toStringAsFixed(2)}");
+}
+</code></pre>
+<h3 id="output-approximate">Output (approximate)</h3>
+<pre class="language-dart"><code>Inverted color: R:51, G:0, B:51
+Half-luminance color: R:102, G:127, B:102
+Cyan RGB: 0, 255, 255
+CMYK of #CCFFCC: C:0.50, M:0.25, Y:0.50, K:0.00
+</code></pre>
+<h3 id="additional-information">Additional information</h3>
+<ul>
+<li>Documentation: see [<code>INSERT PUB DOCS HERE LATER</code>](#) for more examples</li>
+<li>Contributing: see <a href="tree/master/CONTRIBUTING.md">CONTRIBUTING.md</a></li>
+<li>LICENSE: This Project is licensed under Apache License 2.0, see <a href="tree/master/LICENSE">LICENSE</a> for more information</li>
+</ul>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="color_ext">
+  <span class="name"><a href="color_ext/">color_ext</a></span> 
+
+</dt>
+<dd>Support for doing something awesome.
+</dd>
+
+        </dl>
+      </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">color_ext package</li>
+</ol>
+
+    <h5 class="hidden-xs"><span class="package-name">color_ext</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="color_ext/">color_ext</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+</main>
+<footer>
+  <span class="no-break">
+    color_ext
+      1.0.0
+  </span>
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

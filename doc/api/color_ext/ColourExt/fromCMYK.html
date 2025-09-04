@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the fromCMYK method from the ColourExt extension, for the Dart programming language.">
+  <title>fromCMYK method - ColourExt extension - color_ext library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">color_ext</a></li>
+    <li><a href="../../color_ext/">color_ext.dart</a></li>
+    <li><a href="../../color_ext/ColourExt.html">ColourExt</a></li>
+    <li class="self-crumb">fromCMYK static method</li>
+  </ol>
+  <div class="self-name">fromCMYK</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="color_ext&#47;ColourExt-extension-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">fromCMYK</span> static method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<span class="returntype"><a href="../../color_ext/Colour.html">Colour</a></span>
+<span class="name ">fromCMYK</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="fromCMYK-param-c"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">c</span>, </span></li>
+<li><span class="parameter" id="fromCMYK-param-m"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">m</span>, </span></li>
+<li><span class="parameter" id="fromCMYK-param-y"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">y</span>, </span></li>
+<li><span class="parameter" id="fromCMYK-param-k"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">k</span>, </span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Constructs a CMYK color</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">static Colour fromCMYK(double c, double m, double y, double k) {
+  final _c = clampDouble(c, 0.0, 1.0);
+  final _m = clampDouble(m, 0.0, 1.0);
+  final _y = clampDouble(y, 0.0, 1.0);
+  final _k = clampDouble(k, 0.0, 1.0);
+
+  final _r = (1 - _c) * (1 - _k);
+  final _g = (1 - _m) * (1 - _k);
+  final _b = (1 - _y) * (1 - _k);
+
+  return Colour.fromRGBO(_r.round(), _g.round(), _b.round(), 1);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">color_ext</a></li>
+    <li><a href="../../color_ext/">color_ext</a></li>
+    <li><a href="../../color_ext/ColourExt.html">ColourExt</a></li>
+    <li class="self-crumb">fromCMYK static method</li>
+</ol>
+
+    <h5>ColourExt extension on <a href="../../color_ext/Colour.html">Colour</a></h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    color_ext
+      1.0.0
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
