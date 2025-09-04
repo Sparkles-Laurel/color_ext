@@ -1,6 +1,6 @@
 name: color_ext
 description: Extensions for Dart's native Color class.
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/Sparkles-Laurel/color_ext
 
 environment:
