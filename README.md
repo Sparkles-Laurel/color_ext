@@ -88,6 +88,6 @@ Cyan RGB: 0, 255, 255
 CMYK of #CCFFCC: C:0.50, M:0.25, Y:0.50, K:0.00
 ```
 ### Additional information
-- Documentation: see [[INSERT PUB DOCS HERE LATER]](#) for more examples
-- Contributing: see [CONTRIBUTING.md](tree/master/CONTRIBUTING.md)
-- LICENSE: This Project is licensed under Apache License 2.0, see [LICENSE](tree/master/LICENSE) for more information
+- Documentation: see [[INSERT PUB DOCS HERE LATER](https://pub.dev/documentation/color_ext/latest/) for more examples
+- Contributing: see [CONTRIBUTING.md](https://github.com/Sparkles-Laurel/color_ext/blob/master/CONTRIBUTING.md)
+- LICENSE: This Project is licensed under Apache License 2.0, see [LICENSE](https://github.com/Sparkles-Laurel/color_ext/blob/master/LICENSE) for more information
